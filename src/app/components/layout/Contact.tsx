@@ -9,7 +9,7 @@ const Contact = () => {
   const [isOrderOpen, setIsOrderOpen] = useState(false);
   return (
     <>
-      <section className={style.section}>
+      <section id="contact" className={style.section}>
         <div className={`${style.container} `}>
           <iframe
             title="Zubr-2000 googl map"
@@ -28,10 +28,11 @@ const Contact = () => {
             <li>adress: Львів,вул Володимира Великого, 58 </li>
             <li>
               <p>
-                tel: +38093812881
+                tel: 
                 <a href="tel:+38093812881">
                   <Phone />
                 </a>
+                +38093812881
               </p>
             </li>
             <li>

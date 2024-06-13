@@ -1,0 +1,46 @@
+.carouselContent{
+    background-color: black;
+    position: relative;
+    min-height: 100%;
+    overflow: hidden;
+    padding: 2rem 0 ;
+}
+
+.carouselAnimation{
+    display: flex;
+    cursor: grab;
+align-items: center;
+}
+
+.carouselAnimation:active{
+    cursor: grabbing;
+}
+
+.carouselImg{
+    object-fit: cover;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    flex-shrink: 0;
+border-radius: 0.75rem;
+background-color: rgb(38 38 38);;
+}
+
+.dots{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap:0.5rem;
+    margin-top: 1rem;
+
+}
+
+.carouselTitle{
+    padding-top: 180px;
+    text-align: center;
+    color: aliceblue;
+    width: 70%;
+margin: 0 auto;
+position: relative;
+z-index: 2;
+
+}

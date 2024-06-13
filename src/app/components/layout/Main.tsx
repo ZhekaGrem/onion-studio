@@ -3,12 +3,10 @@ import Carousel from '@/app/animation/Carousel';
 import Image from 'next/image';
 
 const Main = () => {
-  return(
-    <section>
-      {/* <Carousel/>kek */}
-      <div style={{width:"auto"}}>
-
-      </div>
+  return( 
+    <section id="home">
+      <Carousel/>
+     
     </section>
   );
 };
