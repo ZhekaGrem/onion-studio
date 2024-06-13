@@ -45,11 +45,9 @@ const Contact = () => {
             </li>
           </ul>
           <div className={style.grupBtn}>
+          
             <div>
-              <button onClick={() => setIsDetailsOpen(true)}>для обговорення деталей</button>
-            </div>
-            <div>
-              <button onClick={() => setIsOrderOpen(true)}>для замовлення</button>
+              <button onClick={() => setIsOrderOpen(true)}>для обговорення деталей</button>
             </div>
           </div>
         </div>

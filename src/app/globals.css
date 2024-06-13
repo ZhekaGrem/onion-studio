@@ -344,9 +344,10 @@ p {
 
 section{
   height: 100%;
-  margin-bottom: 54px;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
 }
-main{
+/* main{
   padding-top: 80px;
-}
+} */
 

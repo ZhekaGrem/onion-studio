@@ -1,10 +1,13 @@
-import React from 'react'
+'use client'
+import React,{useState} from 'react'
 import style from '@/app/assets/styles/aboutus.module.css'
 import Image from 'next/image';
-
+import Contacts from '../forms/Contacts'
 
 const Aboutus = () => {
+  const [isOrderOpen, setIsOrderOpen] = useState(false);
   return (
+    <>
     <section id="aboutus" className={style.aboutSection}>
       <div className={style.blurBg}>
         <div className={style.container}>
@@ -41,13 +44,15 @@ const Aboutus = () => {
                 width={400}
                 height={400}
                 alt="kek"
-              />
+                />
             </div>
           </div>
-          <button> book a studio</button>
+          <button onClick={() => setIsOrderOpen(true)}> book a studio</button>
         </div>
       </div>
     </section>
+    {isOrderOpen && <Contacts onClose={() => setIsOrderOpen(false)} />}
+                </>
   );
 }
 

@@ -131,9 +131,7 @@ const Dots: React.FC<DotsProps> = ({ imgIndex, setImgIndex }) => {
           <button
             key={idx}
             onClick={() => setImgIndex(idx)}
-            className={`h-3 w-3 rounded-full transition-colors ${
-              idx === imgIndex ? 'bg-neutral-50' : 'bg-neutral-500'
-            }`}
+            className={`${style.dotsBtn} ${idx === imgIndex ? style.active : style.disable}`}
           />
         );
       })}

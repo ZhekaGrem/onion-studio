@@ -1,5 +1,7 @@
 .section {
   display: flex;
+max-width: 85rem;
+margin: auto;
 
 
 }

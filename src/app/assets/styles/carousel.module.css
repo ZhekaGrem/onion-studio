@@ -34,7 +34,19 @@ background-color: rgb(38 38 38);;
 
 }
 
+.carouselTitle>h2{
+    font-size: 46px;
+padding-bottom: 10;
+text-shadow: 0.08em 0.08em 0em rgba(0, 0, 0, 0.4);
+
+}
+.carouselTitle>p{
+    font-size: 16px;
+
+}
 .carouselTitle{
+    
+
     padding-top: 180px;
     text-align: center;
     color: aliceblue;
@@ -43,4 +55,17 @@ margin: 0 auto;
 position: relative;
 z-index: 2;
 
+}
+.dotsBtn{
+    width: 0.75rem;
+height: 0.75rem;
+border-radius: 50%;
+transition: background-color 0.3s;
+
+}.active {
+  background-color: #f0f0f0; /* Пример для нейтрального цвета 50 */
+}
+
+.disable {
+  background-color: #808080; /* Пример для нейтрального цвета 500 */
 }
