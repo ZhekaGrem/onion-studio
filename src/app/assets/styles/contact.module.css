@@ -1,0 +1,41 @@
+.section {
+  display: flex;
+
+
+}
+.container {
+  width: 50%;
+}
+
+@media (max-width: 680px) {
+  .container {
+    width: 100%;
+  }
+.section {
+  display: block;
+}
+
+}
+.maps{
+border-radius: 25% 10%;
+
+}
+
+
+.info>h2{
+    text-align: center;
+}
+.info>ul>li{
+    padding: 20px;
+    margin-left: 10px;
+}
+
+.grupBtn{
+    
+padding: 30px;
+}
+.grupBtn>div{
+    display: flex;
+    justify-content: end;
+    padding: 10px;
+}

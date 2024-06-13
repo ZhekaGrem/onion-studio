@@ -1,0 +1,16 @@
+.footer{
+    background-color: black;
+    font-size: 1.1rem;
+    color:aliceblue;
+   padding: 15px;
+}
+.footerContent{
+    margin: 0 5%;
+display: flex;
+justify-content: space-between;
+}
+
+.sociaList{
+    display: flex;
+gap:10px;
+}
