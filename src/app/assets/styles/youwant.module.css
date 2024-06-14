@@ -1,5 +1,25 @@
-.container{
-    max-width: 65rem;
-margin: auto;
-
+.container {
+  max-width: 65rem;
+  margin: auto;
 }
+
+.contentSwitcher {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.contentSwitcherBtn {
+  padding: '10px';
+  margin-right: '10px';
+  color: 'white';
+  border: 'none';
+  cursor: 'pointer';
+}
+
+.contentSwitcherBtn.open {
+    background-color: blue;
+}
+.contentSwitcherBtn.closed {
+    background-color: green;
+}
+

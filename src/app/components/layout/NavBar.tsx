@@ -1,8 +1,7 @@
 'use client';
 import Link from 'next/link';
-import React from 'react';
+import React,{useRef, useState} from 'react';
 import style from '@/app/assets/styles/navbar.module.css';
-import BuregerOpenBtn from '@/app/animation/BuregerOpenBtn';
 import { motion,useCycle } from 'framer-motion';
 import Logo from '../common/Logo';
 
@@ -77,11 +76,25 @@ const itemVariants = {
 
 const NavBar = () => {
   const [isOpen, toggleOpen]: UseCycleReturn = useCycle(false, true);
+ const [isChecked, setIsChecked] = useState(false);
+ const checkboxRef = useRef(null);
+
+ const handleLinkClick = () => {
+   toggleOpen();
+   setIsChecked(!isChecked);
+ };
+
+ const handleCheckboxChange = () => {
+   toggleOpen();
+   setIsChecked(!isChecked);
+ };
   return (
     <header>
       <div className={style.header}>
         <nav className={style.navBar}>
-          <div className={style.logo}><Logo/></div>
+          <div className={style.logo}>
+            <Logo />
+          </div>
           <ul className={style.navBarList}>
             {navlist.map((item) => (
               <li key={item.id}>
@@ -90,7 +103,15 @@ const NavBar = () => {
             ))}
           </ul>
           <div className={style.burgerBtn}>
-            <BuregerOpenBtn onChange={() => toggleOpen()} />
+            <input
+              type="checkbox"
+              role="button"
+              aria-label="Display the menu"
+              className={style.menu}
+              onChange={handleCheckboxChange}
+              ref={checkboxRef}
+              checked={isChecked}
+            />
           </div>
         </nav>
         <motion.div
@@ -102,7 +123,9 @@ const NavBar = () => {
           <ul className={style.mobileMenuList}>
             {navlist.map((item) => (
               <motion.li key={item.id} variants={itemVariants}>
-                <Link href={item.url}>{item.title}</Link>
+                <Link onClick={handleLinkClick} href={item.url}>
+                  {item.title}
+                </Link>
               </motion.li>
             ))}
           </ul>
