@@ -2,10 +2,7 @@
 *::before,
 *::after {
   outline: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+
 }
 
 html,
@@ -347,7 +344,4 @@ section{
   margin-bottom: 30px;
   padding-bottom: 20px;
 }
-/* main{
-  padding-top: 80px;
-} */
 

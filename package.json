@@ -9,6 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fullcalendar/core": "^6.1.14",
+    "@fullcalendar/daygrid": "^6.1.14",
+    "@fullcalendar/google-calendar": "^6.1.14",
+    "@fullcalendar/react": "^6.1.14",
     "@svgr/webpack": "^8.1.0",
     "axios": "^1.7.2",
     "framer-motion": "^11.2.10",
