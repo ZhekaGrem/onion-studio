@@ -1,8 +1,12 @@
+.sectionBg {
+background-color: rgb(85, 85, 85);
+
+}
 .section {
   display: flex;
-max-width: 85rem;
-margin: auto;
 
+width: 100%;
+padding: 4rem 1rem;
 
 }
 .container {
@@ -19,7 +23,19 @@ margin: auto;
 
 }
 .maps{
-border-radius: 25% 10%;
+iframe {
+  filter: invert(90%) hue-rotate(180deg);
+
+  border-radius: 100px 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+border: 2px solid #ccc;
+
+}
+iframe:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+
 
 }
 

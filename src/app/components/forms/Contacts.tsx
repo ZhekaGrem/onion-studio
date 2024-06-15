@@ -2,12 +2,14 @@ import React from 'react';
 import style from '@/app/assets/styles/form.module.css';
 import ReactDOM from 'react-dom';
 import OrderForm from './OrderForm'
+import DetailsForm from './DetailsForm'
 
 interface PortalProps {
  onClose: () => void;
+ openWindow:string;
 }
 
-const Contacts = ({ onClose }: PortalProps) => {
+const Contacts = ({ onClose, openWindow }: PortalProps) => {
   const portalRoot = document.getElementById('portal-root');
 
   if (!portalRoot) {
@@ -20,8 +22,9 @@ const Contacts = ({ onClose }: PortalProps) => {
         <button className={style.closePortalBtn} onClick={onClose}>
           ×
         </button>
-        
-        <OrderForm />
+{openWindow==="DetailsForm"&&<DetailsForm />}
+{openWindow==="OrderForm"&&<OrderForm />}
+
       </div>
     </div>,
     portalRoot

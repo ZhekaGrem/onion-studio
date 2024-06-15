@@ -55,18 +55,21 @@ const handleButtonClick = (index:number) => {
 
   return (
     <section id="youwant" className={style.container}>
+      <div className={style.contentText}>
+
       <h2>я хочу</h2>
       <div className={style.contentSwitcher}>
         {youwantlist.map((list, index) => (
           <button
-            key={list.key}
-            onClick={() => handleButtonClick(index)}
-            className={`${style.contentSwitcherBtn} ${selectedIndex === index ? style.open : style.closed}`}
+          key={list.key}
+          onClick={() => handleButtonClick(index)}
+          className={`${style.contentSwitcherBtn} ${selectedIndex === index ? style.open : style.closed}`}
           >
             {list.title}
           </button>
         ))}
       </div>
+        </div>
       <AnimatePresence>
         {youwantlist.map(
           (list, index) =>
@@ -78,9 +81,12 @@ const handleButtonClick = (index:number) => {
                 exit={{ opacity: 0, y: 50 }}
                 transition={{ duration: 0.5 }}
               >
+                <div className={style.contentText}>
+
                 <h3>{list.title}</h3>
                 <div>
                   <p>{list.text}</p>
+                </div>
                 </div>
                 <h4>{list.titlevideo}</h4>
                 <video width="100%" height="50%" loop controls preload="auto">

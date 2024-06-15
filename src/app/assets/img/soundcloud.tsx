@@ -3,7 +3,7 @@ import React from 'react'
 const soundcloud = () => {
   return (
     <>
-      <svg fill="white" width="30px" height="30px" viewBox="0 0 300 300">
+      <svg  width="30px" height="30px" viewBox="0 0 300 300">
         <g id="XMLID_526_">
           <path
             id="XMLID_527_"

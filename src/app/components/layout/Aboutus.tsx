@@ -101,7 +101,7 @@ const Aboutus:React.FC = () => {
           </div>
         </div>
       </section>
-      {isOrderOpen && <Contacts onClose={() => setIsOrderOpen(false)} />}
+      {isOrderOpen && <Contacts onClose={() => setIsOrderOpen(false)} openWindow={'OrderForm'} />}
     </>
   );
 }

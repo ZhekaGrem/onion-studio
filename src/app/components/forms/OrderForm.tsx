@@ -1,62 +1,3 @@
-// import React from 'react'
-// import style from '@/app/assets/styles/form.module.css';
-
-
-// const OrderForm = () => {
-//      const handleSubmit = (e: React.FormEvent) => {
-//        e.preventDefault();
-
-//        const token = '7399534092:AAEMHZLCKRIJIleRtLYca_6MvmqYviy87OQ'; 
-//        const chat_id = '-1002170191645'; // Замените на ваш чат ID
-//        const text = `Имя: `;
-
-//        const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${text}`;
-
-//        fetch(url, { method: 'GET' })
-//          .then((response) => response.json())
-//          .then((data) => {
-//            if (data.ok) {
-//              alert('Сообщение отправлено!');
-//            } else {
-//              alert('Произошла ошибка при отправке сообщения.');
-//            }
-//          })
-//          .catch((error) => {
-//            console.error('Ошибка:', error);
-//            alert('Произошла ошибка при отправке сообщения.');
-//          });
-//      };
-//   return (
-//     <>
-//       <h1>Замовити</h1>
-//       <form onSubmit={handleSubmit} className={style.forms}>
-//         <label>
-//           <input placeholder="Ваше ім'я" type="text" />
-//         </label>
-//         <label>
-//           <input type="tel" placeholder="Ваш телефон" />
-//         </label>
-//         <label>
-//           <input type="email" placeholder="емеіл" />
-//         </label>
-//         <label>
-//           <input type="text" placeholder="Ваше ім'я в телеграм" />
-//         </label>
-//         <label>
-//           <input type="date" placeholder="на яку дату" />
-//         </label>
-//         <label>
-//           <input type="time" placeholder="в якій годині" />
-//         </label>
-//         <label>
-//           <input className={style.submitBtn} type="submit" placeholder="Замовити" />
-//         </label>
-//       </form>
-//     </>
-//   );
-// }
-
-// export default OrderForm
 'use client'
 import React, { useState } from 'react';
 import style from '@/app/assets/styles/form.module.css';
@@ -70,6 +11,7 @@ const OrderForm = () => {
     date: '',
     time: '',
   });
+  const [error, setError] = useState('');
   const token = process.env.NEXT_PUBLIC_TELEGRAM_TOKEN;
   const chat_id = process.env.NEXT_PUBLIC_CHAT_ID;
 
@@ -78,34 +20,45 @@ const OrderForm = () => {
     setFormData({ ...formData, [name]: value });
   };
 
+  const validateForm = () => {
+    if (!formData.phone && !formData.email && !formData.telegramUsername) {
+      setError('Будь ласка, заповніть хоча б одне поле: телефон, email або Telegram');
+      return false;
+    }
+    setError('');
+    return true;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    
-    const text = `Замовлення:\n
+    if (validateForm()) {
+                          const text = `Замовлення:\n
 Ім'я: ${formData.name}\n
+Для звязку з клієнтом:\n
 Телефон: ${formData.phone}\n
 Емеіл: ${formData.email}\n
 Телеграм: ${formData.telegramUsername}\n
-Дата: ${formData.date}\n
-Час: ${formData.time}`;
+На яку годину клієнт хоче забронювати студію:\n
+Дата: ${formData.date} Година: ${formData.time}`;
 
-    const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${encodeURIComponent(
-      text
-    )}`;
+                          const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${encodeURIComponent(
+                            text
+                          )}`;
 
-    try {
-      const response = await fetch(url, { method: 'GET' });
-      const data = await response.json();
-      if (data.ok) {
-        alert('Сообщение отправлено!');
-      } else {
-        alert('Произошла ошибка при отправке сообщения.');
-      }
-    } catch (error) {
-      console.error('Ошибка:', error);
-      alert('Произошла ошибка при отправке сообщения.');
-    }
+                          try {
+                            const response = await fetch(url, { method: 'GET' });
+                            const data = await response.json();
+                            if (data.ok) {
+                              alert('Повідомлення відправленно!');
+                            } else {
+                              alert('Сталась помилка відправки позвоніть по номеру');
+                            }
+                          } catch (error) {
+                            console.error('Ошибка:', error);
+                            alert('сталась помилка відправки позвоніть по номеру');
+                          }
+                        }
   };
 
   return (
@@ -128,7 +81,7 @@ const OrderForm = () => {
             name="phone"
             value={formData.phone}
             onChange={handleChange}
-            required
+            
           />
         </label>
         <label>
@@ -138,7 +91,7 @@ const OrderForm = () => {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            required
+            
           />
         </label>
         <label>
@@ -148,7 +101,7 @@ const OrderForm = () => {
             name="telegramUsername"
             value={formData.telegramUsername}
             onChange={handleChange}
-            required
+            
           />
         </label>
         <label>

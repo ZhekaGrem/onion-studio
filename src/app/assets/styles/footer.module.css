@@ -1,7 +1,5 @@
 .footer{
-    background-color: black;
     font-size: 1.1rem;
-    color:aliceblue;
    padding: 15px;
 }
 .footerContent{
@@ -13,4 +11,10 @@ justify-content: space-between;
 .sociaList{
     display: flex;
 gap:10px;
+
+}
+
+.svg{
+fill: rgb(1, 1, 14);
+
 }
