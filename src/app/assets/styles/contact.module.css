@@ -22,8 +22,8 @@ padding: 4rem 1rem;
 }
 
 }
-.maps{
-iframe {
+
+.maps {
   filter: invert(90%) hue-rotate(180deg);
 
   border-radius: 100px 25px;
@@ -31,13 +31,13 @@ iframe {
 border: 2px solid #ccc;
 
 }
-iframe:hover {
+.maps:hover {
   transform: scale(1.02);
   transition: transform 0.3s ease;
 }
 
 
-}
+
 
 
 .info>h2{
