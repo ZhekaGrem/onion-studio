@@ -1,4 +1,7 @@
+'use client'
 import styles from './page.module.css';
+import { GoogleAnalytics } from 'nextjs-google-analytics';
+
 
 import Main from './components/layout/Main';
 import Youwant from './components/layout/Youwant';
@@ -14,6 +17,7 @@ import Recording from './components/layout/Recording';
       <Aboutus />
       <Recording />
       <Contact />
+      <GoogleAnalytics trackPageViews />
     </>
   );
 }

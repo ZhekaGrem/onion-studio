@@ -1,7 +1,6 @@
 
 import React from 'react';
 import style from '@/app/assets/styles/footer.module.css';
-import Image from 'next/image';
 import Instagram from '@/app/assets/img/instagram';
 import Soundcloud from '@/app/assets/img/soundcloud';
 import Telegram from '@/app/assets/img//telegram';
