@@ -1,6 +1,5 @@
-import React from 'react'
 
-const soundcloud = () => {
+const soundcloudicon = () => {
   return (
     <>
       <svg  width="30px" height="30px" viewBox="0 0 300 300">
@@ -93,4 +92,4 @@ const soundcloud = () => {
   );
 }
 
-export default soundcloud
+export default soundcloudicon;

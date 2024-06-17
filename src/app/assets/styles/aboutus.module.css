@@ -39,6 +39,8 @@
   width: 100%;
   object-fit: fill;
   display: block;
+  
+
 }
 .containerBenefits > div {
   width: 50%;
@@ -57,4 +59,41 @@
   .containerInfo {
     width: 32rem;
   }
+}
+
+.disclosure{
+  padding: 1.5rem;
+background-color: color-mix(in srgb, #fff 5%, transparent 95%);
+border-color:color-mix(in srgb, #fff 5%, transparent ); 
+
+}
+
+
+.disclosureBtn{
+  width: 100%;
+color: #f3eceb;
+background: none;
+border: 0;
+}
+
+.disclosureText{
+  margin-top: .5rem;
+  line-height: 1.25rem;
+
+}
+
+.btn {
+  padding: 0.6em 1em;
+  border: 4px solid #e8e8e8;
+  transition: ease-in-out 0.3s;
+  background-color: transparent;
+  color: #f3eceb;
+  font-weight: bolder;
+  font-size: 16px;
+}
+
+.btn:hover {
+  transform: scale(1) rotate(-3deg);
+  background-color: #191818;
+  color: white;
 }

@@ -3,9 +3,42 @@ import React, { useState } from 'react';
 import Contacts from '../forms/Contacts';
 import style from '@/app/assets/styles/contact.module.css';
 import Phone from '@/app/assets/img/phone';
+import Instagram from '@/app/assets/img/instagram';
+import Mail from '@/app/assets/img/mail';
+import Build from '@/app/assets/img/build';
+import Telegram from '@/app/assets/img/telegram';
+
+import { contactblocktext, contactlist as contactList } from '@/app/data/data';
+
+
+type IconName = 'Instagram' | 'Phone' | 'Mail' | 'Build' | 'Telegram' ;
+
+const IconComponents: Record<IconName, React.FC> = {
+  Instagram,
+  Phone,
+  Mail,
+  Build,
+  Telegram
+};
+
+type Text = {
+title:string;
+button:string
+};
+
+type ContactsList ={
+info:string;
+key:number;
+url:string;
+nameicon:IconName;
+show:boolean;
+}
+
+const contactslist: ContactsList[] = contactList as ContactsList[];
+
+const text: Text = contactblocktext;
 
 const Contact = () => {
-  const [isDetailsOpen, setIsDetailsOpen] = useState(false);
   const [isOrderOpen, setIsOrderOpen] = useState(false);
   const mapssrc = process.env.NEXT_PUBLIC_MAPS_SRC;
   return (
@@ -25,30 +58,31 @@ const Contact = () => {
             ></iframe>
           </div>
           <div className={`${style.container} ${style.info}`}>
-            <h2>Звязвтись з нами</h2>
+            <h2>{text.title}</h2>
             <ul>
-              <li>adress: Львів,вул Володимира Великого, 58 </li>
-              <li>
-                <p>
-                  tel:
-                  <a href="tel:+38093812881">
-                    <Phone />
-                  </a>
-                  +38093812881
-                </p>
-              </li>
-              <li>
-                meil: tsubylia.records.official@gmail.com{' '}
-                <a href="mailto:tsubylia.records.official@gmail.com"> написати</a>
-              </li>
-              <li>
-                inst: tsubylia_records_official{' '}
-                <a href="https://www.instagram.com/tsubylia_records_official/"> перейти</a>
-              </li>
+              {contactslist.map((item) =>
+                item.show ? (
+                  <li key={item.key}>
+                    <a
+                      href={item.url}
+                      className={style.svg}
+                      rel="noopener noreferrer"
+                      aria-label={item.nameicon}
+                      title={item.nameicon}
+                      target="_blank"
+                    >
+                      {React.createElement(IconComponents[item.nameicon])}
+                    </a>
+                    <span>{item.info}</span>
+                  </li>
+                ) : null
+              )}
             </ul>
             <div className={style.grupBtn}>
               <div>
-                <button onClick={() => setIsOrderOpen(true)}>для обговорення деталей</button>
+                <button className={style.btn} onClick={() => setIsOrderOpen(true)}>
+                  {text.button}
+                </button>
               </div>
             </div>
           </div>

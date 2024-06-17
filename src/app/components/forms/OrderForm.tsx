@@ -1,15 +1,17 @@
-'use client'
+'use client';
 import React, { useState } from 'react';
 import style from '@/app/assets/styles/form.module.css';
+import axios from 'axios';
 
 const OrderForm = () => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    email: '', 
+    email: '',
     telegramUsername: '',
     date: '',
     time: '',
+    howmanytime: ''
   });
   const [error, setError] = useState('');
   const token = process.env.NEXT_PUBLIC_TELEGRAM_TOKEN;
@@ -33,32 +35,36 @@ const OrderForm = () => {
     e.preventDefault();
 
     if (validateForm()) {
-                          const text = `Замовлення:\n
+      const text = `Замовлення:\n
 Ім'я: ${formData.name}\n
 Для звязку з клієнтом:\n
 Телефон: ${formData.phone}\n
 Емеіл: ${formData.email}\n
 Телеграм: ${formData.telegramUsername}\n
 На яку годину клієнт хоче забронювати студію:\n
-Дата: ${formData.date} Година: ${formData.time}`;
+Дата: ${formData.date} Година: ${formData.time} Як довго:${formData.howmanytime}`;
 
-                          const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${encodeURIComponent(
-                            text
-                          )}`;
+      const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${encodeURIComponent(
+        text
+      )}`;
 
-                          try {
-                            const response = await fetch(url, { method: 'GET' });
-                            const data = await response.json();
-                            if (data.ok) {
-                              alert('Повідомлення відправленно!');
-                            } else {
-                              alert('Сталась помилка відправки позвоніть по номеру');
-                            }
-                          } catch (error) {
-                            console.error('Ошибка:', error);
-                            alert('сталась помилка відправки позвоніть по номеру');
-                          }
-                        }
+      try {
+        const response = await axios.get(url, {
+          params: {
+            chat_id: chat_id,
+            text: text,
+          },
+        });
+        if (response.data.ok) {
+          alert('Повідомлення відправленно!');
+        } else {
+          alert('Сталась помилка відправки позвоніть по номеру');
+        }
+      } catch (error) {
+        console.error('Ошибка:', error);
+        alert('сталась помилка відправки позвоніть по номеру');
+      }
+    }
   };
 
   return (
@@ -81,7 +87,6 @@ const OrderForm = () => {
             name="phone"
             value={formData.phone}
             onChange={handleChange}
-            
           />
         </label>
         <label>
@@ -91,7 +96,6 @@ const OrderForm = () => {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            
           />
         </label>
         <label>
@@ -101,7 +105,6 @@ const OrderForm = () => {
             name="telegramUsername"
             value={formData.telegramUsername}
             onChange={handleChange}
-            
           />
         </label>
         <label>
@@ -112,6 +115,15 @@ const OrderForm = () => {
             value={formData.date}
             onChange={handleChange}
             required
+          />
+        </label>
+        <label>
+          <input
+            type="number"
+            placeholder="на скільки часу"
+            name="howmanytime"
+            value={formData.howmanytime}
+            onChange={handleChange}
           />
         </label>
         <label>

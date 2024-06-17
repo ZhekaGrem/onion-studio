@@ -1,7 +1,7 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 import { motion, useMotionValue } from 'framer-motion';
-import {carouseldata} from '@/app/data/data'
+import { carouselblock } from '@/app/data/data';
 import style from '@/app/assets/styles/carousel.module.css'
 
 type CardType = {
@@ -21,7 +21,7 @@ const SPRING_OPTIONS = {
   damping: 50,
 };
 
-const cards: CardType[] = carouseldata;
+const cards: CardType[] = carouselblock;
 
 const Carousel = () => {
   const [imgIndex, setImgIndex] = useState(0);

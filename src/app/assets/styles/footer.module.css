@@ -18,3 +18,8 @@ gap:10px;
 fill: rgb(1, 1, 14);
 
 }
+.contentText{
+   display: grid;
+place-items: center;
+
+}

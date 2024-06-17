@@ -1,6 +1,4 @@
-import React from 'react'
-
-const telegram = () => {
+const telegramicon = () => {
   return (
     <>
       <svg  width="30px" height="30px" viewBox="0 0 24 24" data-testid="TelegramIcon">
@@ -10,4 +8,4 @@ const telegram = () => {
   );
 }
 
-export default telegram
+export default telegramicon;

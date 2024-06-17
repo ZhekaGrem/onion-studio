@@ -1,6 +1,4 @@
-import React from 'react'
-
-const youtube = () => {
+const youtubeicon = () => {
   return (
     <>
       <svg width="30px" height="30px" viewBox="0 0 24 24" data-testid="YouTubeIcon">
@@ -10,4 +8,4 @@ const youtube = () => {
   );
 }
 
-export default youtube
+export default youtubeicon;

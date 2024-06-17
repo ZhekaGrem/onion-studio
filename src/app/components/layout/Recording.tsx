@@ -10,8 +10,6 @@ import { EventClickArg } from '@fullcalendar/core';
 
 const handleEventClick = (clickInfo: EventClickArg) => {
 
-const calendar_api = process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_API;
-const calendar_id = process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_ID;
 
   clickInfo.jsEvent.preventDefault();
   const start = clickInfo.event.start;
@@ -30,7 +28,7 @@ const Recording: React.FC = () => {
     const calendar_api = process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_API;
     const calendar_id = process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_ID;
   return (
-    <section className={style.container} id="recording">
+    <section className={style.container} >
       <div className={style.calendar}>
         <FullCalendar
           plugins={[dayGridPlugin, googleCalendarPlugin]}

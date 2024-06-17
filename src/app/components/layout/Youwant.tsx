@@ -1,8 +1,10 @@
 'use client';
 import React, { useState } from 'react';
 import style from '@/app/assets/styles/youwant.module.css';
-import { youwantblock } from '@/app/data/data';
+import { youwantblock,youwanttitle } from '@/app/data/data';
 import { motion, AnimatePresence } from 'framer-motion';
+
+type YouwnatTitle=string;
 
 type WantList = {
   key: number;
@@ -13,6 +15,8 @@ type WantList = {
 };
 
 const youwantlist: WantList[] = youwantblock;
+const title: YouwnatTitle = youwanttitle;
+
 const Youwant = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const handleButtonClick = (index: number) => {
@@ -22,7 +26,7 @@ const Youwant = () => {
   return (
     <section id="youwant" className={style.container}>
       <div className={style.contentText}>
-        <h2>я хочу</h2>
+        <h2>{title}</h2>
         <div className={style.contentSwitcher}>
           {youwantlist.map((list, index) => (
             <button

@@ -47,16 +47,20 @@ const Aboutus:React.FC = () => {
         <div className={style.blurBg}>
           <div className={style.container}>
             <div className={style.containerInfo}>
-              <h4>{aboutusblock.minititle}</h4>
-              <h2>{aboutusblock.title}</h2>
-              <p>{aboutusblock.description}</p>
+              <h4>{aboutuscontent.minititle}</h4>
+              <h2>{aboutuscontent.title}</h2>
+              <p>{aboutuscontent.description}</p>
             </div>
             <div className={style.containerBenefits}>
-              <div>
+              <div className={style.disclosureBlock}>
                 <ul>
                   {aboutuslist.map((item, index) => (
-                    <li key={item.key}>
-                      <button onClick={() => handleButtonClick(index)}>{item.title}</button>
+                    <li className={style.disclosure} key={item.key}>
+                      <div>
+                        <button className={style.disclosureBtn} onClick={() => handleButtonClick(index)}>
+                          {item.title}
+                        </button>
+                      </div>
                       <AnimatePresence>
                         {openIndex === index && (
                           <motion.div
@@ -65,7 +69,7 @@ const Aboutus:React.FC = () => {
                             exit={{ height: 0, opacity: 0 }}
                             transition={{ duration: 0.5 }}
                           >
-                            <p>{item.description}</p>
+                            <p className={style.disclosureText}>{item.description}</p>
                           </motion.div>
                         )}
                       </AnimatePresence>
@@ -83,7 +87,9 @@ const Aboutus:React.FC = () => {
                 />
               </div>
             </div>
-            <button onClick={() => setIsOrderOpen(true)}> {aboutusblock.btn.title}</button>
+            <button className={style.btn} id="recording" onClick={() => setIsOrderOpen(true)}>
+              {aboutusblock.btn.title}
+            </button>
           </div>
         </div>
       </section>

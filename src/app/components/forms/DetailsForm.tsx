@@ -1,12 +1,12 @@
 'use client';
 import React, { useState } from 'react';
 import style from '@/app/assets/styles/form.module.css';
+import axios from 'axios';
 
 const DetailsForm = () => {
   const [formData, setFormData] = useState({
     name: '',
     clientdata: '',
-
   });
   const token = process.env.NEXT_PUBLIC_TELEGRAM_TOKEN;
   const chat_id = process.env.NEXT_PUBLIC_CHAT_ID;
@@ -29,9 +29,13 @@ const DetailsForm = () => {
     )}`;
 
     try {
-      const response = await fetch(url, { method: 'GET' });
-      const data = await response.json();
-      if (data.ok) {
+      const response = await axios.get(url, {
+        params: {
+          chat_id: chat_id,
+          text: text,
+        },
+      });
+      if (response.data.ok) {
         alert('Повідомлення відправленно!');
       } else {
         alert('Сталась помилка відправки позвоніть по номеру');
@@ -55,7 +59,7 @@ const DetailsForm = () => {
             required
           />
         </label>
- 
+
         <label>
           <input
             type="text"
@@ -66,8 +70,7 @@ const DetailsForm = () => {
             required
           />
         </label>
-        
-       
+
         <label>
           <input className={style.submitBtn} type="submit" value="Замовити" />
         </label>

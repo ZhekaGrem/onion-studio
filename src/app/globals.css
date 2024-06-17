@@ -215,7 +215,6 @@ form {
 }
 
 fieldset {
-  border: 1px solid #c0c0c0;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
 }
@@ -350,3 +349,4 @@ section:last-child{
 padding-bottom: 0px;
 
 }
+

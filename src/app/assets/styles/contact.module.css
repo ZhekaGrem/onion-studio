@@ -57,3 +57,25 @@ padding: 30px;
     justify-content: end;
     padding: 10px;
 }
+
+.img{
+  fill: antiquewhite;
+}
+
+
+
+.btn{
+  padding: 0.6em 1em;
+  border: 4px solid #e8e8e8;
+  transition: ease-in-out 0.3s;
+  background-color: transparent;
+  color: #f3eceb;
+  font-weight: bolder;
+  font-size: 16px;
+}
+
+.btn:hover {
+  transform: scale(1) rotate(2deg);
+  background-color: #191818;
+  color: white;
+}
