@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import  {  GoogleAnalytics  }  from  "nextjs-google-analytics" ;
 import "./globals.css";
 import NavBar from "./components/layout/NavBar";
 import Footer from "./components/layout/Footer";
@@ -30,6 +31,7 @@ export default function RootLayout({
           <Footer/>
           <div id="portal-root"/>
         </body>
+        < GoogleAnalytics  trackPageViews  /> 
     </html>
   );
 }

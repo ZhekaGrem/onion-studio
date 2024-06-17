@@ -1,13 +1,19 @@
-import Image from "next/image"
+import Image from 'next/image';
+import { logourl } from '@/app/data/data';
 
+type LogoInfo = {
+  url:string;
+  description:string;
+}
 
+const logoinfo: LogoInfo = logourl;
 
 const Logo = () => {
   return (
     <>
-      <Image src="/onionLogoNoBg-2.png" alt="logo" width={75} height={75} />
+      <Image src={logoinfo.url} alt={logoinfo.description} width={75} height={75} />
     </>
   );
-}
+};
 
-export default Logo
+export default Logo;

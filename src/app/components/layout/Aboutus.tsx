@@ -1,9 +1,12 @@
 'use client'
 import React,{useState} from 'react'
-import style from '@/app/assets/styles/aboutus.module.css'
 import Image from 'next/image';
 import Contacts from '../forms/Contacts'
 import { motion, AnimatePresence } from 'framer-motion';
+
+import style from '@/app/assets/styles/aboutus.module.css'
+import { disclosurecontent, aboutusblock } from '@/app/data/data';
+
 
 type IndexType= number | null;
 
@@ -13,37 +16,24 @@ type AboutusList={
   key?: number;
   minititle?:string
   title:string;
-  info:string;
+  description:string;
 
 }
 
+type AboutusBlock = AboutusList &{
+  btn:{
+    title:string;
+  };
+  img:{
+    description:string;
+    url:string
+  }
+}
 
-const aboutuslist: AboutusList[] = [
-  {
-    key: 1,
-    title: 'Доступні ціни',
-    info:
-      ' Over 700 purpose-built, 24-hour studios across the UK, US and DE. Join a community of 350k artists and access exclusive opportunities to perform live and get your songs played on the radio.',
-  },
-  {
-    key: 2,
-    title: 'Допомога в створенні контенту',
-    info:
-      ' Over 700 purpose-built, 24-hour studios across the UK, US and DE. Join a community of 350k artists and access exclusive opportunities to perform live and get your songs played on the radio.',
-  },
-  {
-    key: 3,
-    title: 'Гнучкі можливості скасування',
-    info:
-      ' Over 700 purpose-built, 24-hour studios across the UK, US and DE. Join a community of 350k artists and access exclusive opportunities to perform live and get your songs played on the radio.',
-  },
-  {
-    key: 3,
-    title: 'Допомога початківцям',
-    info:
-      ' Over 700 purpose-built, 24-hour studios across the UK, US and DE. Join a community of 350k artists and access exclusive opportunities to perform live and get your songs played on the radio.',
-  },
-];
+
+const aboutuscontent: AboutusBlock = aboutusblock;
+
+const aboutuslist: AboutusList[] = disclosurecontent;
 
 const Aboutus:React.FC = () => {
    const [openIndex, setOpenIndex] = useState < IndexType>(null);
@@ -57,13 +47,9 @@ const Aboutus:React.FC = () => {
         <div className={style.blurBg}>
           <div className={style.container}>
             <div className={style.containerInfo}>
-              <h4>чому варто обрати нас</h4>
-              <h2>Студії від художників, для художників</h2>
-              <p>
-                Over 700 purpose-built, 24-hour studios across the UK, US and DE. Join a community of 350k
-                artists and access exclusive opportunities to perform live and get your songs played on the
-                radio.
-              </p>
+              <h4>{aboutusblock.minititle}</h4>
+              <h2>{aboutusblock.title}</h2>
+              <p>{aboutusblock.description}</p>
             </div>
             <div className={style.containerBenefits}>
               <div>
@@ -79,7 +65,7 @@ const Aboutus:React.FC = () => {
                             exit={{ height: 0, opacity: 0 }}
                             transition={{ duration: 0.5 }}
                           >
-                            <p>{item.info}</p>
+                            <p>{item.description}</p>
                           </motion.div>
                         )}
                       </AnimatePresence>
@@ -90,14 +76,14 @@ const Aboutus:React.FC = () => {
               <div>
                 <Image
                   className={style.containerBenefitsImg}
-                  src="/011720NYRE-4201.jpg"
+                  src={aboutusblock.img.url}
                   width={400}
                   height={400}
-                  alt="kek"
+                  alt={aboutusblock.img.description}
                 />
               </div>
             </div>
-            <button onClick={() => setIsOrderOpen(true)}> book a studio</button>
+            <button onClick={() => setIsOrderOpen(true)}> {aboutusblock.btn.title}</button>
           </div>
         </div>
       </section>

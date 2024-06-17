@@ -1,6 +1,7 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 import { motion, useMotionValue } from 'framer-motion';
+import {carouseldata} from '@/app/data/data'
 import style from '@/app/assets/styles/carousel.module.css'
 
 type CardType = {
@@ -20,17 +21,7 @@ const SPRING_OPTIONS = {
   damping: 50,
 };
 
-const cards: CardType[] = [
-  { url: '/Analogue-Recording-Studio.jpg', title: 'title1', info: 'ПАКЕТИ, ЩО ВІДПОВІДАЮТЬ ВАШОМУ БЮДЖЕТУ І ВИМОГАМ', id: 1 },
-  {
-    url: '/Microphone-in-Recording-Studio.jpg',
-    title: 'title2',
-    info: 'ПАКЕТИ, ЩО ВІДПОВІДАЮТЬ ВАШОМУ БЮДЖЕТУ І ВИМОГАМ',
-    id: 2,
-  },
-  { url: '/Pro-Tools-Control-Console-in-Recording-Studio.jpg', title: 'title3', info: 'ПАКЕТИ, ЩО ВІДПОВІДАЮТЬ ВАШОМУ БЮДЖЕТУ І ВИМОГАМ', id: 3 },
-  { url: '/Rapper-on-the-Mic.jpg', title: 'title4', info: 'ПАКЕТИ, ЩО ВІДПОВІДАЮТЬ ВАШОМУ БЮДЖЕТУ І ВИМОГАМ', id: 4 },
-];
+const cards: CardType[] = carouseldata;
 
 const Carousel = () => {
   const [imgIndex, setImgIndex] = useState(0);

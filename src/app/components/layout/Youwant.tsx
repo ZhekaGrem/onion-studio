@@ -1,6 +1,7 @@
-'use client'
+'use client';
 import React, { useState } from 'react';
 import style from '@/app/assets/styles/youwant.module.css';
+import { youwantblock } from '@/app/data/data';
 import { motion, AnimatePresence } from 'framer-motion';
 
 type WantList = {
@@ -11,65 +12,29 @@ type WantList = {
   video: string;
 };
 
-const youwantlist: WantList[] = [
-  {
-    key: 1,
-    title: 'Діджей',
-    text:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut omnis illo incidunt molestias amet minima voluptas iusto atque dicta ex?',
-    titlevideo: '',
-    video: 'https://www.datocms-assets.com/17746/1689766507-productmodule_dj.mp4',
-  },
-
-  {
-    key: 2,
-    title: 'Репетирувати',
-    text:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut omnis illo incidunt molestias amet minima voluptas iusto atque dicta ex?',
-    titlevideo: '',
-    video: '',
-  },
-  {
-    key: 3,
-    title: 'Записувати',
-    text:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut omnis illo incidunt molestias amet minima voluptas iusto atque dicta ex?',
-    titlevideo: '',
-    video: 'https://www.datocms-assets.com/17746/1689766507-productmodule_dj.mp4',
-  },
-  {
-    key: 4,
-    title: 'Подкаст',
-    text:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut omnis illo incidunt molestias amet minima voluptas iusto atque dicta ex?',
-    titlevideo: '',
-    video: 'https://www.datocms-assets.com/17746/1689766507-productmodule_dj.mp4',
-  },
-];
-
+const youwantlist: WantList[] = youwantblock;
 const Youwant = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
-const handleButtonClick = (index:number) => {
-  setSelectedIndex(index);
-};
+  const handleButtonClick = (index: number) => {
+    setSelectedIndex(index);
+  };
 
   return (
     <section id="youwant" className={style.container}>
       <div className={style.contentText}>
-
-      <h2>я хочу</h2>
-      <div className={style.contentSwitcher}>
-        {youwantlist.map((list, index) => (
-          <button
-          key={list.key}
-          onClick={() => handleButtonClick(index)}
-          className={`${style.contentSwitcherBtn} ${selectedIndex === index ? style.open : style.closed}`}
-          >
-            {list.title}
-          </button>
-        ))}
-      </div>
+        <h2>я хочу</h2>
+        <div className={style.contentSwitcher}>
+          {youwantlist.map((list, index) => (
+            <button
+              key={list.key}
+              onClick={() => handleButtonClick(index)}
+              className={`${style.contentSwitcherBtn} ${selectedIndex === index ? style.open : style.closed}`}
+            >
+              {list.title}
+            </button>
+          ))}
         </div>
+      </div>
       <AnimatePresence>
         {youwantlist.map(
           (list, index) =>
@@ -82,11 +47,10 @@ const handleButtonClick = (index:number) => {
                 transition={{ duration: 0.5 }}
               >
                 <div className={style.contentText}>
-
-                <h3>{list.title}</h3>
-                <div>
-                  <p>{list.text}</p>
-                </div>
+                  <h3>{list.title}</h3>
+                  <div>
+                    <p>{list.text}</p>
+                  </div>
                 </div>
                 <h4>{list.titlevideo}</h4>
                 <video width="100%" height="50%" loop controls preload="auto">

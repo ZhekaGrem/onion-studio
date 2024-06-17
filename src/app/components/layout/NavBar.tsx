@@ -4,6 +4,7 @@ import React,{useRef, useState} from 'react';
 import style from '@/app/assets/styles/navbar.module.css';
 import { motion,useCycle } from 'framer-motion';
 import Logo from '../common/Logo';
+import {navbar} from '@/app/data/data'
 
 type NavList = {
   url: string;
@@ -13,37 +14,10 @@ type NavList = {
 
 type UseCycleReturn = [boolean, () => void];
 
-const navlist: NavList[] = [
-  {
-    url: '#',
-    title: 'ДІМ',
-    id: 1,
-  },
-  {
-    url: '#youwant',
-    title: 'ДЛЯ ВАС',
-    id: 2,
-  },
-  {
-    url: '#aboutus',
-    title: 'ПРО НАС',
-    id: 3,
-  },
-  {
-    url: '#recording',
-    title: 'ЗАПИСАТИСЬ',
-    id: 4,
-  },
-  {
-    url: '#contact',
-    title: "ЗВ'ЯЗАТИСЬ",
-    id: 5,
-  },
-];
+const navlist: NavList[] = navbar;
 
 const menuVariants = {
   open: {
-    
     height: '100vh',
     transition: {
       type: 'spring',

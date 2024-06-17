@@ -9,6 +9,10 @@ import { EventClickArg } from '@fullcalendar/core';
 
 
 const handleEventClick = (clickInfo: EventClickArg) => {
+
+const calendar_api = process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_API;
+const calendar_id = process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_ID;
+
   clickInfo.jsEvent.preventDefault();
   const start = clickInfo.event.start;
   const end = clickInfo.event.end;
@@ -23,31 +27,28 @@ const handleEventClick = (clickInfo: EventClickArg) => {
   }
 };
 const Recording: React.FC = () => {
+    const calendar_api = process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_API;
+    const calendar_id = process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_ID;
   return (
     <section className={style.container} id="recording">
       <div className={style.calendar}>
-        
-          <FullCalendar
-            plugins={[dayGridPlugin, googleCalendarPlugin]}
-            googleCalendarApiKey="AIzaSyBJA1zbivKJUmvc442zIMADpHMugKbDvX0"
-            events={{
-              googleCalendarId: 'tsubylia.records.official@gmail.com',
-            }}
-            initialView="dayGridMonth"
-            headerToolbar={{
-              left: 'prev,next today',
-              center: 'title',
-              right: 'dayGridMonth,dayGridWeek,dayGridDay',
-              
-            }}
-         
-            height="auto"
-            locale="uk"
-            firstDay={1}
-            eventClick={handleEventClick}
-          />
-        
-
+        <FullCalendar
+          plugins={[dayGridPlugin, googleCalendarPlugin]}
+          googleCalendarApiKey={calendar_api}
+          events={{
+            googleCalendarId: calendar_id,
+          }}
+          initialView="dayGridMonth"
+          headerToolbar={{
+            left: 'prev,next today',
+            center: 'title',
+            right: 'dayGridMonth,dayGridDay',
+          }}
+          height="auto"
+          locale="uk"
+          firstDay={1}
+          eventClick={handleEventClick}
+        />
       </div>
     </section>
   );

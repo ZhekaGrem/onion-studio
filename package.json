@@ -17,6 +17,7 @@
     "axios": "^1.7.2",
     "framer-motion": "^11.2.10",
     "next": "14.2.3",
+    "nextjs-google-analytics": "^2.3.3",
     "prettierrc": "^0.0.0-5",
     "react": "^18",
     "react-dom": "^18",
