@@ -24,11 +24,11 @@ const handleEventClick = (clickInfo: EventClickArg) => {
     alert(`Подія: ${clickInfo.event.title} Час: невідомий`);
   }
 };
-const Recording: React.FC = () => {
+const Calendar: React.FC = () => {
     const calendar_api = process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_API;
     const calendar_id = process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_ID;
   return (
-    <section className={style.container} >
+    <section id="calendar" className={style.container}>
       <div className={style.calendar}>
         <FullCalendar
           plugins={[dayGridPlugin, googleCalendarPlugin]}
@@ -52,4 +52,4 @@ const Recording: React.FC = () => {
   );
 };
 
-export default Recording;
+export default Calendar;

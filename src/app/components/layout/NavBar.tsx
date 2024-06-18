@@ -1,10 +1,10 @@
 'use client';
 import Link from 'next/link';
-import React,{useRef, useState} from 'react';
+import React, { useRef, useState } from 'react';
 import style from '@/app/assets/styles/navbar.module.css';
-import { motion,useCycle } from 'framer-motion';
+import { motion, useCycle } from 'framer-motion';
 import Logo from '../common/Logo';
-import {navbar} from '@/app/data/data'
+import { navbar } from '@/app/data/data';
 
 type NavList = {
   url: string;
@@ -50,24 +50,26 @@ const itemVariants = {
 
 const NavBar = () => {
   const [isOpen, toggleOpen]: UseCycleReturn = useCycle(false, true);
- const [isChecked, setIsChecked] = useState(false);
- const checkboxRef = useRef(null);
+  const [isChecked, setIsChecked] = useState(false);
+  const checkboxRef = useRef(null);
 
- const handleLinkClick = () => {
-   toggleOpen();
-   setIsChecked(!isChecked);
- };
+  const handleLinkClick = () => {
+    toggleOpen();
+    setIsChecked(!isChecked);
+  };
 
- const handleCheckboxChange = () => {
-   toggleOpen();
-   setIsChecked(!isChecked);
- };
+  const handleCheckboxChange = () => {
+    toggleOpen();
+    setIsChecked(!isChecked);
+  };
   return (
     <header>
       <div className={style.header}>
         <nav className={style.navBar}>
           <div className={style.logo}>
-            <Logo />
+            <Link href="/">
+              <Logo />
+            </Link>
           </div>
           <ul className={style.navBarList}>
             {navlist.map((item) => (

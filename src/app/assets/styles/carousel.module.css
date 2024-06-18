@@ -37,7 +37,7 @@ background-color: rgb(38 38 38);;
 
 .carouselTitle>h2{
     font-size: 46px;
-padding-bottom: 10;
+padding-bottom: 2rem;
 text-shadow: 0.08em 0.08em 0em rgba(0, 0, 0, 0.4);
 
 }
@@ -46,17 +46,30 @@ text-shadow: 0.08em 0.08em 0em rgba(0, 0, 0, 0.4);
 
 }
 .carouselTitle{
-    
-
-    padding-top: 180px;
+    padding-top: 20rem;
     text-align: center;
     color: aliceblue;
     width: 70%;
-margin: 0 auto;
-position: relative;
-z-index: 2;
-
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
 }
+@media(max-width:900px){
+
+    .carouselTitle{
+        padding-top: 15rem;
+
+    }
+}
+@media(max-width:650px){
+
+    .carouselTitle{
+        padding-top: 5rem;
+
+    }
+}
+
+
 .dotsBtn{
     width: 0.75rem;
 height: 0.75rem;

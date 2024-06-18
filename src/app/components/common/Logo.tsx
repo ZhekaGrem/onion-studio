@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { logourl } from '@/app/data/data';
+import style from './logo.module.css'
 
 type LogoInfo = {
   url:string;
@@ -11,7 +12,13 @@ const logoinfo: LogoInfo = logourl;
 const Logo = () => {
   return (
     <>
-      <Image src={logoinfo.url} alt={logoinfo.description} width={75} height={75} />
+      <Image
+        className={style.logo}
+        src={logoinfo.url}
+        alt={logoinfo.description}
+       width={50}
+       height={50}
+      />
     </>
   );
 };

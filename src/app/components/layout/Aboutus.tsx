@@ -87,7 +87,7 @@ const Aboutus:React.FC = () => {
                 />
               </div>
             </div>
-            <button className={style.btn} id="recording" onClick={() => setIsOrderOpen(true)}>
+            <button className={style.btn} id="signup" onClick={() => setIsOrderOpen(true)}>
               {aboutusblock.btn.title}
             </button>
           </div>

@@ -3,7 +3,11 @@ import React, { useState } from 'react';
 import style from '@/app/assets/styles/form.module.css';
 import axios from 'axios';
 
-const OrderForm = () => {
+type ClosePortal={
+  onClose:()=>void;
+}
+
+const OrderForm = ({ onClose }: ClosePortal) => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -11,7 +15,7 @@ const OrderForm = () => {
     telegramUsername: '',
     date: '',
     time: '',
-    howmanytime: ''
+    howmanytime: '',
   });
   const [error, setError] = useState('');
   const token = process.env.NEXT_PUBLIC_TELEGRAM_TOKEN;
@@ -57,12 +61,15 @@ const OrderForm = () => {
         });
         if (response.data.ok) {
           alert('Повідомлення відправленно!');
+          setTimeout(onClose, 200);
         } else {
-          alert('Сталась помилка відправки позвоніть по номеру');
+          alert('Сталась помилка напишіть в Інстаграм: tsubylia_records_official');
+          setTimeout(onClose, 200);
         }
       } catch (error) {
         console.error('Ошибка:', error);
-        alert('сталась помилка відправки позвоніть по номеру');
+        alert('Сталась помилка напишіть в Інстаграм: tsubylia_records_official');
+        setTimeout(onClose, 200);
       }
     }
   };
@@ -72,6 +79,7 @@ const OrderForm = () => {
       <form className={style.forms} onSubmit={handleSubmit}>
         <label>
           <input
+            className={style.input}
             placeholder="Ваше ім'я"
             type="text"
             name="name"
@@ -82,6 +90,7 @@ const OrderForm = () => {
         </label>
         <label>
           <input
+            className={style.input}
             type="tel"
             placeholder="Ваш телефон"
             name="phone"
@@ -91,6 +100,7 @@ const OrderForm = () => {
         </label>
         <label>
           <input
+            className={style.input}
             type="email"
             placeholder="емеіл"
             name="email"
@@ -100,6 +110,7 @@ const OrderForm = () => {
         </label>
         <label>
           <input
+            className={style.input}
             type="text"
             placeholder="Ваше ім'я в телеграм"
             name="telegramUsername"
@@ -109,6 +120,7 @@ const OrderForm = () => {
         </label>
         <label>
           <input
+            className={style.input}
             type="date"
             placeholder="на яку дату"
             name="date"
@@ -119,6 +131,7 @@ const OrderForm = () => {
         </label>
         <label>
           <input
+            className={style.input}
             type="number"
             placeholder="на скільки часу"
             name="howmanytime"
@@ -128,6 +141,7 @@ const OrderForm = () => {
         </label>
         <label>
           <input
+            className={style.input}
             type="time"
             placeholder="в якій годині"
             name="time"

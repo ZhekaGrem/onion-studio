@@ -22,9 +22,8 @@ const Contacts = ({ onClose, openWindow }: PortalProps) => {
         <button className={style.closePortalBtn} onClick={onClose}>
           ×
         </button>
-{openWindow==="DetailsForm"&&<DetailsForm />}
-{openWindow==="OrderForm"&&<OrderForm />}
-
+        {openWindow === 'DetailsForm' && <DetailsForm onClose={onClose} />}
+        {openWindow === 'OrderForm' && <OrderForm onClose={onClose} />}
       </div>
     </div>,
     portalRoot

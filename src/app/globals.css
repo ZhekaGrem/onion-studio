@@ -186,9 +186,11 @@ audio:not([controls]) {
 }
 
 html {
-  font-size: 100%;
+  scroll-behavior: smooth;
+  font-size: 16px;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
+  scroll-padding-top:80px ;
 }
 
 a {
@@ -350,3 +352,23 @@ padding-bottom: 0px;
 
 }
 
+:root{
+
+  --color__backgound-black: #adfg;
+  --color__backgound-white: #adfg;
+  --color__backgound-black-text: #adfg;
+  --color__backgound-white-text: #adfg;
+  --text__title-block:2rem;
+  --text__minititle-block:1.5rem;
+  --text__p:asf;
+  --text__font-weight-nav:600;
+  
+}
+
+h2{
+  font-size: var(--text__title-block);
+}
+h4{
+  font-size: var(--text__minititle-block);
+
+}

@@ -3,7 +3,11 @@ import React, { useState } from 'react';
 import style from '@/app/assets/styles/form.module.css';
 import axios from 'axios';
 
-const DetailsForm = () => {
+type ClosePortal={
+  onClose:()=>void;
+}
+
+const DetailsForm = ({ onClose }: ClosePortal) => {
   const [formData, setFormData] = useState({
     name: '',
     clientdata: '',
@@ -37,12 +41,15 @@ const DetailsForm = () => {
       });
       if (response.data.ok) {
         alert('Повідомлення відправленно!');
+        setTimeout(onClose,200);
       } else {
-        alert('Сталась помилка відправки позвоніть по номеру');
+        alert('Сталась помилка напишіть в Інстаграм: tsubylia_records_official');
+         setTimeout(onClose, 200);
       }
     } catch (error) {
       console.error('Ошибка:', error);
-      alert('Сталась помилка відправки позвоніть по номеру');
+      alert('Сталась помилка напишіть в Інстаграм: tsubylia_records_official');
+       setTimeout(onClose, 200);
     }
   };
 
@@ -51,6 +58,7 @@ const DetailsForm = () => {
       <form className={style.forms} onSubmit={handleSubmit}>
         <label>
           <input
+            className={style.input}
             placeholder="Ваше ім'я"
             type="text"
             name="name"
@@ -62,6 +70,7 @@ const DetailsForm = () => {
 
         <label>
           <input
+            className={style.input}
             type="text"
             placeholder="як з вами звязатись?"
             name="clientdata"

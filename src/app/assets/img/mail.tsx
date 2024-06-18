@@ -4,7 +4,6 @@ const mailicon = () => {
       <svg
         width="30px"
         height="30px"
-
         viewBox="0 0 24 24"
         data-testid="EmailIcon"
       >

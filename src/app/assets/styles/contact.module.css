@@ -1,70 +1,55 @@
 .sectionBg {
-background-color: rgb(85, 85, 85);
-
+  background-color: rgb(0, 0, 0);
+  color: #e8e8e8;
 }
+
 .section {
   display: flex;
-
-width: 100%;
-padding: 4rem 1rem;
-
+  width: 100%;
+  padding: 4rem 1rem;
 }
+
+
 .container {
   width: 50%;
 }
 
-@media (max-width: 680px) {
-  .container {
-    width: 100%;
-  }
-.section {
-  display: block;
-}
-
-}
-
 .maps {
+  min-height: 400px;
   filter: invert(90%) hue-rotate(180deg);
-
   border-radius: 100px 25px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-border: 2px solid #ccc;
-
+  border: 2px solid #ccc;
 }
 .maps:hover {
   transform: scale(1.02);
   transition: transform 0.3s ease;
 }
 
+.info > h2 {
+  padding-top: 1.5rem;
 
-
-
-
-.info>h2{
-    text-align: center;
+  text-align: center;
 }
-.info>ul>li{
-    padding: 20px;
-    margin-left: 10px;
+.info > ul > li {
+  padding: 20px;
+  margin-left: 10px;
 }
 
-.grupBtn{
-    
-padding: 30px;
+.grupBtn {
+  padding: 30px;
 }
-.grupBtn>div{
-    display: flex;
-    justify-content: end;
-    padding: 10px;
+.grupBtn > div {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
 }
 
-.img{
+.img {
   fill: antiquewhite;
 }
 
-
-
-.btn{
+.btn {
   padding: 0.6em 1em;
   border: 4px solid #e8e8e8;
   transition: ease-in-out 0.3s;
@@ -78,4 +63,29 @@ padding: 30px;
   transform: scale(1) rotate(2deg);
   background-color: #191818;
   color: white;
+}
+.listContact {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.svg {
+  fill: #ccc;
+  padding: 8px;
+}
+
+@media (max-width: 680px) {
+  .container {
+    width: 100%;
+  }
+  .section {
+    display: block;
+  }
+
+  .info > ul > li {
+    text-align: center;
+  }
+  .grupBtn > div {
+    justify-content: center;
+  }
 }

@@ -50,7 +50,7 @@ const Contact = () => {
               title="Студія цибулі на карті"
               src={mapssrc}
               width="100%"
-              height="550"
+              height="100%"
               allowFullScreen={false}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
@@ -62,13 +62,13 @@ const Contact = () => {
             <ul>
               {contactslist.map((item) =>
                 item.show ? (
-                  <li key={item.key}>
+                  <li key={item.key} className={style.listContact}>
                     <a
                       href={item.url}
                       className={style.svg}
                       rel="noopener noreferrer"
                       aria-label={item.nameicon}
-                      title={item.nameicon}
+                      title={`перейти в ${item.nameicon}`}
                       target="_blank"
                     >
                       {React.createElement(IconComponents[item.nameicon])}

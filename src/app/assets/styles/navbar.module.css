@@ -7,10 +7,11 @@
 .navBar,
 .navBarList {
   display: flex;
+  font-weight: var(--text__font-weight-nav);
+
 }
 
 .navBar {
-
   justify-content: space-around;
 }
 
@@ -19,50 +20,57 @@
   padding: 32px;
 }
 
-
-
-.burgerBtn{
-    display: none;
+.burgerBtn {
+  display: none;
 }
 
 .mobileMenuList {
   text-align: center;
 }
-.mobileMenuList >li{
-color: rgb(4, 30, 53);
-font-size: 1.5rem;
-line-height: 2rem;
-padding: 1.5rem;
+
+.mobileMenuList > li {
+  color: rgb(4, 30, 53);
+  font-size: 1.5rem;
+  line-height: 2rem;
+  padding: 1.5rem;
+font-weight: var(--text__font-weight-nav);
 
 }
 
-.mobileMenu.closed{
-  .mobileMenuList{
-display: none;
-  }}
-
-@media(max-width: 680px){
-.navBarList {display: none;}
-.burgerBtn{display: block;}
-.navBar {justify-content: space-between; padding: 10px;
-}
-.mobileMenu{
-  width: 100%;
-  height: 100vh;
-}
-.mobileMenu.active{
-  .mobileMenuList{
-display: block;
+.mobileMenu.closed {
+  .mobileMenuList {
+    display: none;
   }
 }
 
+@media (max-width: 680px) {
+  .navBarList {
+    display: none;
+  }
+  .burgerBtn {
+    display: block;
+ padding-top: 10px;
+
+  }
+  .navBar {
+    justify-content: space-between;
+    padding: 10px;
+  }
+  .mobileMenu {
+    width: 100%;
+    height: 100vh;
+  }
+  .mobileMenu.active {
+    .mobileMenuList {
+      display: block;
+    }
+  }
 }
 
 /* chacbox */
 .menu {
   height: 28px;
   aspect-ratio: 1;
-  padding: 0;
   border-inline: calc(28px / 2) solid #0000;
   box-sizing: content-box;
   --_g1: linear-gradient(black 20%, #0000 0 80%, black 0) no-repeat content-box border-box;
@@ -72,7 +80,6 @@ display: block;
   background-size: 20% 80%, 40% 100%;
   position: relative;
   clip-path: inset(0 25%);
-  -webkit-mask: linear-gradient(90deg, #0000, #000 25% 75%, #0000);
   cursor: pointer;
   transition: background-position 0.3s var(--_s, 0.3s), clip-path 0s var(--_s, 0.6s);
   -webkit-appearance: none;

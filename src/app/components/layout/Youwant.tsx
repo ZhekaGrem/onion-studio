@@ -26,7 +26,7 @@ const Youwant = () => {
   return (
     <section id="youwant" className={style.container}>
       <div className={style.contentText}>
-        <h2>{title}</h2>
+        <h4>{title}</h4>
         <div className={style.contentSwitcher}>
           {youwantlist.map((list, index) => (
             <button
@@ -34,7 +34,7 @@ const Youwant = () => {
               onClick={() => handleButtonClick(index)}
               className={`${style.contentSwitcherBtn} ${selectedIndex === index ? style.open : style.closed}`}
             >
-              {list.title}
+              <span className={style.switcherBox}>{list.title}</span>
             </button>
           ))}
         </div>
@@ -51,10 +51,8 @@ const Youwant = () => {
                 transition={{ duration: 0.5 }}
               >
                 <div className={style.contentText}>
-                  <h3>{list.title}</h3>
-                  <div>
+                  
                     <p>{list.text}</p>
-                  </div>
                 </div>
                 <h4>{list.titlevideo}</h4>
                 <video width="100%" height="50%" loop controls preload="auto">

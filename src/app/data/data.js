@@ -9,32 +9,32 @@ export const logourl = {
 };
 
 export const navbar = [
-  {
-    url: '#',
-    title: 'ДІМ',
-    id: 1,
-  },
-  {
-    url: '#youwant',
-    title: 'ДЛЯ ВАС',
-    id: 2,
-  },
-  {
-    url: '#aboutus',
-    title: 'ПРО НАС',
-    id: 3,
-  },
-  {
-    url: '#recording',
-    title: 'ЗАПИСАТИСЬ',
-    id: 4,
-  },
-  {
-    url: '#contact',
-    title: "ЗВ'ЯЗАТИСЬ",
-    id: 5,
-  },
-];
+         {
+           url: '#youwant',
+           title: 'ДЛЯ ВАС',
+           id: 2,
+         },
+         {
+           url: '#aboutus',
+           title: 'ПРО НАС',
+           id: 3,
+         },
+         {
+           url: '#calendar',
+           title: 'КАЛЕНДАР',
+           id: 4,
+         },
+         {
+           url: '#signup',
+           title: 'ЗАПИСАТИСЬ',
+           id: 5,
+         },
+         {
+           url: '#contact',
+           title: "ЗВ'ЯЗАТИСЬ",
+           id: 6,
+         },
+       ];
 
 // Перший блок сайту
 export const carouselblock = [
@@ -111,7 +111,7 @@ export const aboutusblock = {
   description:
     'Over 700 purpose-built, 24-hour studios across the UK, US and DE. Join a community of 350k artists and access exclusive opportunities to perform live and get your songs played on the radio.',
   btn: {
-    title: 'book a studio',
+    title: 'Записатись',
   },
   img: {
     description: 'tsubylia records музична студія львів',
@@ -160,13 +160,13 @@ export const contactlist = [
            nameicon: 'Build',
            show: true,
          },
-         {
-           info: '+38093812881',
-           key: 2,
-           url: 'tel:+38093812881',
-           nameicon: 'Phone',
-           show: true,
-         },
+        //  {
+        //    info: '+38093812881',
+        //    key: 2,
+        //    url: 'tel:+38093812881',
+        //    nameicon: 'Phone',
+        //    show: true,
+        //  },
          {
            info: 'tsubylia.records.official@gmail.com',
            key: 3,
