@@ -77,6 +77,8 @@ border-color:color-mix(in srgb, #fff 5%, transparent );
 color: #f3eceb;
 background: none;
 border: 0;
+font-size: var(--text__minititle-block);
+
 }
 
 .disclosureText{

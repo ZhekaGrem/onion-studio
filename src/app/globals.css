@@ -339,7 +339,16 @@ p {
   padding: 0.2em 0;
 }
 
+main{
+  padding-top: 80px;
+}
 
+@media(max-width:680px){
+main {
+  padding-top: 70px;
+}
+
+}
 section{
   height: 100%;
   margin-bottom: 30px;
@@ -353,7 +362,6 @@ padding-bottom: 0px;
 }
 
 :root{
-
   --color__backgound-black: #adfg;
   --color__backgound-white: #adfg;
   --color__backgound-black-text: #adfg;

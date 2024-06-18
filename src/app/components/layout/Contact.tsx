@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState,useRef } from 'react';
 import Contacts from '../forms/Contacts';
 import style from '@/app/assets/styles/contact.module.css';
 import Phone from '@/app/assets/img/phone';
@@ -7,6 +7,9 @@ import Instagram from '@/app/assets/img/instagram';
 import Mail from '@/app/assets/img/mail';
 import Build from '@/app/assets/img/build';
 import Telegram from '@/app/assets/img/telegram';
+
+import { motion, useInView } from 'framer-motion';
+import {rightSlide } from '@/app/animation/animation'
 
 import { contactblocktext, contactlist as contactList } from '@/app/data/data';
 
@@ -31,7 +34,6 @@ info:string;
 key:number;
 url:string;
 nameicon:IconName;
-show:boolean;
 }
 
 const contactslist: ContactsList[] = contactList as ContactsList[];
@@ -39,6 +41,8 @@ const contactslist: ContactsList[] = contactList as ContactsList[];
 const text: Text = contactblocktext;
 
 const Contact = () => {
+   const ref = useRef(null);
+   const isInView = useInView(ref, { once: true });
   const [isOrderOpen, setIsOrderOpen] = useState(false);
   const mapssrc = process.env.NEXT_PUBLIC_MAPS_SRC;
   return (
@@ -57,12 +61,28 @@ const Contact = () => {
               className={` ${style.maps}`}
             ></iframe>
           </div>
-          <div className={`${style.container} ${style.info}`}>
-            <h2>{text.title}</h2>
+          <div ref={ref} className={`${style.container} ${style.info}`}>
+            {isInView ? (
+              <motion.h2
+                initial="hidden"
+                animate="visible"
+                variants={rightSlide}
+                transition={{ duration: 1 }}
+              >
+                {text.title}
+              </motion.h2>
+            ) : null}
             <ul>
               {contactslist.map((item) =>
-                item.show ? (
-                  <li key={item.key} className={style.listContact}>
+                isInView ? (
+                  <motion.li
+                    initial="hidden"
+                    animate="visible"
+                    variants={rightSlide}
+                    transition={{ duration: 1 }}
+                    key={item.key}
+                    className={style.listContact}
+                  >
                     <a
                       href={item.url}
                       className={style.svg}
@@ -74,15 +94,24 @@ const Contact = () => {
                       {React.createElement(IconComponents[item.nameicon])}
                     </a>
                     <span>{item.info}</span>
-                  </li>
+                  </motion.li>
                 ) : null
               )}
             </ul>
             <div className={style.grupBtn}>
               <div>
-                <button className={style.btn} onClick={() => setIsOrderOpen(true)}>
-                  {text.button}
-                </button>
+                {isInView ? (
+                  <motion.button
+                    initial="hidden"
+                    animate="visible"
+                    variants={rightSlide}
+                    transition={{ duration: 1 }}
+                    className={style.btn}
+                    onClick={() => setIsOrderOpen(true)}
+                  >
+                    {text.button}
+                  </motion.button>
+                ) : null}
               </div>
             </div>
           </div>

@@ -38,135 +38,152 @@ export const navbar = [
 
 // Перший блок сайту
 export const carouselblock = [
-  {
-    url: '/Analogue-Recording-Studio.jpg',
-    title: 'title1',
-    info: 'ПАКЕТИ, ЩО ВІДПОВІДАЮТЬ ВАШОМУ БЮДЖЕТУ І ВИМОГАМ',
-    id: 1,
-  },
-  {
-    url: '/Microphone-in-Recording-Studio.jpg',
-    title: 'title2',
-    info: 'ПАКЕТИ, ЩО ВІДПОВІДАЮТЬ ВАШОМУ БЮДЖЕТУ І ВИМОГАМ',
-    id: 2,
-  },
-  {
-    url: '/Pro-Tools-Control-Console-in-Recording-Studio.jpg',
-    title: 'title3',
-    info: 'ПАКЕТИ, ЩО ВІДПОВІДАЮТЬ ВАШОМУ БЮДЖЕТУ І ВИМОГАМ',
-    id: 3,
-  },
-  {
-    url: '/Rapper-on-the-Mic.jpg',
-    title: 'title4',
-    info: 'ПАКЕТИ, ЩО ВІДПОВІДАЮТЬ ВАШОМУ БЮДЖЕТУ І ВИМОГАМ',
-    id: 4,
-  },
-];
+         {
+           url: '/Analogue-Recording-Studio.jpg',
+           title: 'Музична студія у Львові:',
+           info:
+             'Ласкаво просимо до нашої музичної студії у Львові! Ми пропонуємо широкий спектр послуг для музикантів, продюсерів та ентузіастів, які шукають професійні умови для запису, мікшування та мастерінгу своїх музичних проектів.',
+           id: 1,
+         },
+         {
+           url: '/Microphone-in-Recording-Studio.jpg',
+           title: 'Ідеальні умови для вашої творчості',
+           info: 'Ми пропонуємо професійне обладнання та підтримку для створення вашої музики.',
+           id: 2,
+         },
+         {
+           url: '/Pro-Tools-Control-Console-in-Recording-Studio.jpg',
+           title: 'Записуйте музику з нами',
+           info: 'Ми пропонуємо пакети послуг, що підходять для будь-якого бюджету та вимог.',
+           id: 3,
+         },
+         {
+           url: '/Rapper-on-the-Mic.jpg',
+           title: 'Професійне обладнання і підтримка',
+           info: ' Приходьте до нас і переконайтеся в якості наших послуг!',
+           id: 4,
+         },
+       ];
 
 // Другий блок сайту
 export const youwanttitle='я хочу';
 
 export const youwantblock = [
-  {
-    key: 1,
-    title: 'Діджей',
-    text:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut omnis illo incidunt molestias amet minima voluptas iusto atque dicta ex?',
-    titlevideo: '',
-    video: 'https://www.datocms-assets.com/17746/1689766507-productmodule_dj.mp4',
-  },
+         {
+           key: 1,
+           title: 'Діджей',
+           text:
+             'Наші послуги запису для діджеїв забезпечують найвищу якість звуку та професійне середовище для створення ваших міксів. Завдяки сучасному обладнанню та експертній підтримці, ви зможете реалізувати свої найсміливіші музичні ідеї. Ми пропонуємо можливість запису лайв-сетів, міксів і реміксів з використанням новітніх технологій. Приходьте до нас, і ваші треки зазвучать на новому рівні!',
+           titlevideo: '',
+           video: 'https://www.datocms-assets.com/17746/1689766507-productmodule_dj.mp4',
+         },
 
-  {
-    key: 2,
-    title: 'Репетирувати',
-    text:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut omnis illo incidunt molestias amet minima voluptas iusto atque dicta ex?',
-    titlevideo: '',
-    video: '',
-  },
-  {
-    key: 3,
-    title: 'Записувати',
-    text:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut omnis illo incidunt molestias amet minima voluptas iusto atque dicta ex?',
-    titlevideo: '',
-    video: 'https://www.datocms-assets.com/17746/1689766507-productmodule_dj.mp4',
-  },
-  {
-    key: 4,
-    title: 'Подкаст',
-    text:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut omnis illo incidunt molestias amet minima voluptas iusto atque dicta ex?',
-    titlevideo: '',
-    video: 'https://www.datocms-assets.com/17746/1689766507-productmodule_dj.mp4',
-  },
-];
+         {
+           key: 2,
+           title: 'Аудіокниги',
+           text:
+             'Запис аудіокниг у нашій студії гарантує вам чистий і чіткий звук, що важливо для передання всіх нюансів вашого твору. Наші професійні мікрофони та обробка звуку забезпечують ідеальне звучання вашого голосу. Ми працюємо з професійними дикторами та авторами, забезпечуючи високу якість запису і монтажу. Звертайтеся до нас для створення аудіокниг, які захоплять слухачів з першої хвилини.',
+           titlevideo: '',
+           video: '',
+         },
+         {
+           key: 3,
+           title: 'Музичні уроки',
+           text:
+             'Наша студія пропонує ідеальні умови для запису музичних уроків. Високоякісне обладнання та професійний звук дозволяють створювати навчальні матеріали, які допоможуть вашим учням швидко освоїти нові техніки та репертуар. Ми пропонуємо послуги запису відео та аудіо уроків для різних інструментів і стилів. Довірте нам створення ваших навчальних матеріалів, і вони будуть відповідати найвищим стандартам якості.',
+           titlevideo: '',
+           video: 'https://www.datocms-assets.com/17746/1689766507-productmodule_dj.mp4',
+         },
+         {
+           key: 4,
+           title: 'Подкасти',
+           text:
+             'Запис подкастів у нашій студії дозволить вам зосередитися на змісті, а не на технічних аспектах. Ми забезпечимо вам професійне обладнання та комфортне середовище для роботи. Наші послуги включають запис, обробку і монтаж подкастів, що гарантує високу якість звуку і готовий до публікації продукт. Співпрацюйте з нами, і ваш подкаст буде звучати на рівні з найкращими шоу у світі.',
+           titlevideo: '',
+           video: 'https://www.datocms-assets.com/17746/1689766507-productmodule_dj.mp4',
+         },
+         {
+           key: 5,
+           title: 'Голос ШІ',
+           text:
+             'Ми пропонуємо послуги запису голосу для Штучного Інтелекту, що включають професійний звукозапис і обробку. Наші фахівці забезпечать чіткість і якість голосових даних, що є важливим для тренування штучного інтелекту. Ми працюємо з різними форматами і вимогами, забезпечуючи точність і надійність записів. Довірте нам запис вашого голосу для AI, і ми гарантуємо високу якість і професійний підхід.',
+           titlevideo: '',
+           video: 'https://www.datocms-assets.com/17746/1689766507-productmodule_dj.mp4',
+         },
+         {
+           key: 6,
+           title: 'Репетиції',
+           text:
+             'Наша студія пропонує відмінні умови для репетицій. Сучасне обладнання та акустика забезпечують комфортну атмосферу для творчого процесу. Ми пропонуємо обладнані кімнати для індивідуальних та групових репетицій, де ви зможете зосередитися на музиці без зайвих відволікань. Приходьте до нас для підготовки до виступів і записів, і ваші репетиції будуть максимально ефективними.',
+           titlevideo: '',
+           video: 'https://www.datocms-assets.com/17746/1689766507-productmodule_dj.mp4',
+         },
+       ];
 
 // Третій блок сайту
 
 export const aboutusblock = {
-  minititle: 'чому варто обрати нас1',
-  title: 'Студії від художників, для художників',
-  description:
-    'Over 700 purpose-built, 24-hour studios across the UK, US and DE. Join a community of 350k artists and access exclusive opportunities to perform live and get your songs played on the radio.',
-  btn: {
-    title: 'Записатись',
-  },
-  img: {
-    description: 'tsubylia records музична студія львів',
-    url: '/011720NYRE-4201.jpg',
-  },
-};
+         minititle: 'чому варто обрати нас',
+         title: 'Студії від музиканта, для музикантів',
+         description:
+           'Ласкаво просимо до нашої студії, де творчість знаходить свій ідеальний дім! Наша студія створена музикантом для музикантів, і ми розуміємо важливість надання найкращих умов для вашої творчості. Ми пропонуємо унікальний простір, де ви можете зосередитися на своїй роботі та розвивати свій талант.',
+         btn: {
+           title: 'Записатись',
+         },
+         img: {
+           description: 'tsubylia records музична студія львів',
+           url: '/011720NYRE-4201.jpg',
+         },
+       };
 
 export const disclosurecontent = [
-  {
-    key: 1,
-    title: 'Доступні ціни',
-    description:
-      ' Over 700 purpose-built, 24-hour studios across the UK, US and DE. Join a community of 350k artists and access exclusive opportunities to perform live and get your songs played on the radio.',
-  },
-  {
-    key: 2,
-    title: 'Допомога в створенні контенту',
-    description:
-      ' Over 700 purpose-built, 24-hour studios across the UK, US and DE. Join a community of 350k artists and access exclusive opportunities to perform live and get your songs played on the radio.',
-  },
-  {
-    key: 3,
-    title: 'Гнучкі можливості скасування',
-    description:
-      ' Over 700 purpose-built, 24-hour studios across the UK, US and DE. Join a community of 350k artists and access exclusive opportunities to perform live and get your songs played on the radio.',
-  },
-  {
-    key: 4,
-    title: 'Допомога початківцям',
-    description:
-      ' Over 700 purpose-built, 24-hour studios across the UK, US and DE. Join a community of 350k artists and access exclusive opportunities to perform live and get your songs played on the radio.',
-  },
-];
+         {
+           key: 1,
+           title: 'Перша година безкоштовно',
+           description:
+             'Ми розуміємо, як важливо зробити перші кроки у світі творчості. Тому, щоб підтримати початківців, наша студія пропонує унікальну можливість – першу годину роботи абсолютно безкоштовно для нових користувачів. Це ваш шанс спробувати наші послуги, оцінити якість обладнання та відчути атмосферу нашої студії без жодних витрат.',
+         },
+         {
+           key: 2,
+           title: 'Творче середовище та комфорт',
+           description:
+             'Ми розуміємо, наскільки важливо мати комфортне і надихаюче середовище для творчості. Наша студія створена з урахуванням потреб художників, забезпечуючи затишок та спокій для вашої роботи. Ви зможете зосередитися на своїй творчості, не відволікаючись на технічні деталі. Наш простір сприяє продуктивності і допомагає реалізувати найсміливіші ідеї.',
+         },
+         {
+           key: 3,
+           title: 'Гнучкі можливості скасування',
+           description:
+             'Плани можуть змінитися. Скасуйте підписку щонайменше за 4 години до запланованого початку сеансу.',
+         },
+         {
+           key: 4,
+           title: 'Доступні ціни',
+           description:
+             'Ми пропонуємо різноманітні пакети послуг, які можна адаптувати під ваші потреби та бюджет. Незалежно від того, чи ви початківець, чи професіонал, у нас є рішення, яке підійде саме вам. Наші пакети включають все необхідне для створення якісного продукту, від запису до обробки і мастерінгу.',
+         },
+       ];
 
 // Пятий блок сайту
 
 export const contactblocktext = {
-  title:'звязвтись з нами',
+  title:'звязатись з нами',
   button:'обговорення деталей'
 };
 export const contactlist = [
          {
-           info: 'Львів,вул Володимира Великого, 58',
+           info: 'м. Львів, вул. Кокорудза, 13',
            key: 1,
-           url: 'https://www.instagram.com/tsubylia_records_official/',
+           url: 'https://maps.app.goo.gl/mWvm3CR9zXJMU8Lp9',
            nameicon: 'Build',
            show: true,
          },
-        //  {
-        //    info: '+38093812881',
-        //    key: 2,
-        //    url: 'tel:+38093812881',
-        //    nameicon: 'Phone',
-        //    show: true,
-        //  },
+         //  {
+         //    info: '+38093812881',
+         //    key: 2,
+         //    url: 'tel:+38093812881',
+         //    nameicon: 'Phone',
+         //    show: true,
+         //  },
          {
            info: 'tsubylia.records.official@gmail.com',
            key: 3,
@@ -181,18 +198,18 @@ export const contactlist = [
            nameicon: 'Instagram',
            show: true,
          },
-         {
-           info: 'Telegram',
-           key: 5,
-           url: 'https://t.me/badindron',
-           nameicon: 'Telegram',
-           show: true,
-         },
+        //  {
+        //    info: 'Telegram',
+        //    key: 5,
+        //    url: 'https://t.me/badindron',
+        //    nameicon: 'Telegram',
+        //    show: true,
+        //  },
        ];
 
 //Підвал footer сайту
 
-export const footertext = 'всі права захищені 2024';
+export const footertext = '© 2024. Всі права захищені.';
 
 export const footericons = [
          {
@@ -202,24 +219,24 @@ export const footericons = [
            nameicon: 'Instagram',
            show: true,
          },
-         {
-           info: 'telegram',
-           key: 2,
-           url: 'https://www.instagram.com/tsubylia_records_official/',
-           nameicon: 'Telegram',
-           show: true,
-         },
+         //  {
+         //    info: 'telegram',
+         //    key: 2,
+         //    url: 'https://www.instagram.com/tsubylia_records_official/',
+         //    nameicon: 'Telegram',
+         //    show: true,
+         //  },
          {
            info: 'youtube',
            key: 3,
-           url: 'https://www.instagram.com/tsubylia_records_official/',
+           url: 'https://www.youtube.com/channel/UC6hVbtY60xsRglG6T3nbkew/',
            nameicon: 'Youtube',
            show: true,
          },
          {
            info: 'soundcloud',
            key: 4,
-           url: 'https://www.instagram.com/tsubylia_records_official/',
+           url: 'https://soundcloud.com/user-128119866-528294401/',
            nameicon: 'Soundcloud',
            show: true,
          },
